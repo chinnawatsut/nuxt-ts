@@ -72,7 +72,7 @@ export const actions: Actions<State, RootState> = {
     commit(types.SELECT2, id)
   },
   callGet({ commit }) {
-    axios.get('/v2/5be013623200005e006493f3')
+    axios.get('/')
   }
 }
 
