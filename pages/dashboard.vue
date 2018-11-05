@@ -1,60 +1,59 @@
 <template>
-  <div>
-    <div class="featured-content">
-      <div class="container">
-        <h1 class="featured-title">{{ title }}</h1>
-        <p class="featured-info">{{ description }}</p>
+  <section class="main-content product-feeds container">  
+    <div class="wrapper-section-filter">
+      <h2 class="title-section">Featured Products by <b>Scrum Good</b></h2>
+      <div class="form-select-wrapper">
+        <select 
+          class="form-field-select" 
+        >
+          <option value="manual">Featured</option>
+          <option value="price-ascending">Price: Low to High</option>
+          <option value="price-descending">Price: High to Low</option>
+          <option value="title-ascending">A-Z</option>
+          <option value="title-descending">Z-A</option>
+          <option value="created-ascending">Oldest to Newest</option>
+          <option value="created-descending">Newest to Oldest</option>
+          <option 
+            value="best-selling" 
+            selected="selected">Best Selling</option>
+        </select>
+        <label class="form-field-title">Sort by</label>
+        <span class="fas fa-sort-down"/>
       </div>
-    </div>
-    <section class="product-feeds container">
-      <h2 class="title-section">Tech & Electronics</h2>
-      <div class="row">
-        <!--  END item product -->
-        <div 
-          v-for="(product,index) in productItem" 
-          :key="index" 
-          class="col-md-6 col-lg-4 product-item">
-          <div class="product-wrap">
-            <a 
-              href="/product/1" 
-              class="product-link-cover">
-              <div 
-                class="product-image" 
-                data-image-type="true">
-                <figure class="cover-image">
-                  <img 
-                    :src="product.image" 
-                    alt="">
-                </figure>
-              </div>
-            </a>
-            <!-- END Photo -->
-            <div class="product-info">
-              <div class="product-verticle-content">
-                <a href="/product/1">
-                  <h3 class="product-title">{{ product.name }}</h3>
-                </a>
-                <div class="product-price">
-                  <span class="text-muted">{{ product.price }}</span>
-                </div>
+    </div> 
+    <div class="row">
+      <div class="col-md-6 col-lg-3 product-item">
+        <div class="product-wrap">
+          <a 
+            href="product.html" 
+            class="product-link-cover">
+            <div 
+              class="product-image" 
+              data-image-type="true">
+              <figure class="cover-image">
+                <img 
+                  src="https://2.bp.blogspot.com/-x-tt4uiv18I/W9gAU0Xc5UI/AAAAAAAAVz4/mPk0LJNV38wRBj81N8iG9Ik6zaEFubtzgCLcBGAs/s1600/Thumb-1.png" 
+                  alt="">
+              </figure>
+            </div>
+          </a>
+          <!-- END Photo -->
+          <div class="product-info">
+            <div class="product-verticle-content">
+              <a href="product.html">
+                <h3 class="product-title">Daily Essentials R E D</h3>
+              </a>
+              <div class="product-price">
+                <span class="data-price">¥2,000</span>
               </div>
             </div>
-            <!-- END Title -->
-            <p>
-              <a 
-                href="" 
-                class="add-to-cart">
-                <button
-                  class="btn btn-add-to-cart">
-                  <span>Buy</span>
-                </button>
-              </a>
-            </p>
           </div>
+          <!-- END Title -->
         </div>
       </div>
-    </section>
-  </div>
+      <!--  END item product -->
+    </div>
+  </section>
 </template>
 
 <script lang="ts">
