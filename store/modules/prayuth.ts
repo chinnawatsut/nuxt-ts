@@ -1,5 +1,6 @@
 import { ActionTree, MutationTree, GetterTree, ActionContext } from 'vuex'
 import { RootState } from 'store'
+import axios from '~/plugins/axios';
 
 export const name = 'prayuth'
 
@@ -69,6 +70,9 @@ export const actions: Actions<State, RootState> = {
   select2({ commit }, id: number) {
     console.log(id)
     commit(types.SELECT2, id)
+  },
+  callGet({ commit }) {
+    axios.get('/v2/5be013623200005e006493f3')
   }
 }
 

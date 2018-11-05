@@ -10,6 +10,7 @@
       <button @click="select2(1)">1</button>
       <button @click="select2(2)">2</button>
       <button @click="select2(3)">3</button>
+      <button @click="callAPI">API Called</button>
     </div>
 
   </div>
@@ -27,6 +28,7 @@ import {
 } from 'vuex-class'
 
 import * as prayuth from '~/store/modules/prayuth'
+import axios from '~/plugins/axios'
 
 const PrayuthGetter = namespace(prayuth.name, Getter)
 const PrayuthAction = namespace(prayuth.name, Action)
@@ -64,8 +66,13 @@ export default class Index extends Vue {
     console.log('greeting: ' + this.msg)
   }
 
+  callAPI () {
+    this.callGet()
+  }
+
   @PrayuthGetter selectedPerson2
   @PrayuthAction select2
+  @PrayuthAction callGet
 }
 
 </script>
