@@ -5,6 +5,13 @@
     {{ count }}
     <button @click="addToCount(1)">Add</button>
     <button @click="resetCount">Reset</button>
+    <div>
+      selected: {{ selectedPerson2 }}
+      <button @click="select2(1)">1</button>
+      <button @click="select2(2)">2</button>
+      <button @click="select2(3)">3</button>
+    </div>
+
   </div>
 </template>
 
@@ -18,6 +25,11 @@ import {
   Mutation,
   namespace
 } from 'vuex-class'
+
+import * as prayuth from '~/store/modules/prayuth'
+
+const PrayuthGetter = namespace(prayuth.name, Getter)
+const PrayuthAction = namespace(prayuth.name, Action)
 
 @Component
 export default class Index extends Vue {
@@ -51,6 +63,9 @@ export default class Index extends Vue {
   greet () {
     console.log('greeting: ' + this.msg)
   }
+
+  @PrayuthGetter selectedPerson2
+  @PrayuthAction select2
 }
 
 </script>
